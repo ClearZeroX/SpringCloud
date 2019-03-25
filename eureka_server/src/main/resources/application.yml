@@ -1,0 +1,19 @@
+server:
+  port: 8988
+  servlet:
+    context-path: /eurekaServer/
+
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    # 服务治理的url 注意要加访问地址
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eurekaServer/eureka
+
+spring:
+  application:
+    name: eureka-server

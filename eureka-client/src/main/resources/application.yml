@@ -1,0 +1,12 @@
+server:
+  port: 8987
+  servlet:
+    context-path: /eurekaclient/
+spring:
+  application:
+    name: eureka-client
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8988/eurekaServer/eureka/
+
