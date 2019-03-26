@@ -10,3 +10,15 @@
             Web的起步依赖spring-boot-starter-web
     2、@EnableFeignClients注解开启Feign的功能
     3、定义接口通过@FeignClient(value="服务名") 来调用哪个服务
+
+第四篇: 断路器(Hystrix) (Finchley版本)
+    1、在ribbon中使用
+    2、依赖: spring-cloud-starter-netflix-hystrix的起步依赖
+    3、@EnableHystrix开启Hystrix
+    4、@HystrixCommand注解。该注解对该方法创建了熔断器的功能，并指定了fallbackMethod熔断方法, 出现问题时将返回熔断方法中返回的内容.
+
+    1、在feign中使用断路器
+    2、feign中自带断路器, 默认关闭, 配置文件中打开
+        feign.hystrix.enabled=true
+    3、在@FeignClient注解的接口的注解中加上fallback的指定类就行了
+    4、3中指定类需要实现@FeignClient注解的接口, 并注入IOC容器中.

@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
  * @create : 2019-03-26 14:20
  * @desc : 使用feign
  **/
-@FeignClient(value = "eureka-client")
+@FeignClient(value = "eureka-client", fallback = SchedualServiceHiHystrix.class)
 public interface SchedualServiceHi {
 
     @RequestMapping(value = "/eurekaClient/hi", method = RequestMethod.GET)
