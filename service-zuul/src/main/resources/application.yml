@@ -1,0 +1,19 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8988/eurekaServer/eureka/
+server:
+  port: 8983
+spring:
+  application:
+    name: service-zuul
+
+#以/api-a/开头的请求转发给service-ribbon 以/api-b/开头的请求转发给service-feign
+zuul:
+  routes:
+    api-a:
+      path: /api-a/**
+      serviceId: service-ribbon
+    api-b:
+      path: /api-b/**
+      serviceId: service-feign

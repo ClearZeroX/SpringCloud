@@ -22,3 +22,24 @@
         feign.hystrix.enabled=true
     3、在@FeignClient注解的接口的注解中加上fallback的指定类就行了
     4、3中指定类需要实现@FeignClient注解的接口, 并注入IOC容器中.
+
+第五篇: 路由网关(zuul) (Finchley版本)
+    1、路由作用:
+        1、依赖: spring-cloud-starter-netflix-zuul的起步依赖
+        2、@EnableZuulProxy，开启zuul的功能
+        3、配置文件: #以/api-a/开头的请求转发给service-ribbon 以/api-b/开头的请求转发给service-feign
+            zuul:
+              routes:
+                api-a:
+                  path: /api-a/**
+                  serviceId: service-ribbon
+                api-b:
+                  path: /api-b/**
+                  serviceId: service-feign
+
+    2、服务过滤:
+        1、创建过滤器, 继承ZuulFilter
+
+
+
+

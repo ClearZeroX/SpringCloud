@@ -19,6 +19,7 @@ public class HelloService {
     /*在ribbon中使用熔断器*/
     @HystrixCommand(fallbackMethod = "hiError")
     public String hiService(String name){
+        System.out.println("service-ribbon");
         return restTemplate.getForObject("http://EUREKA-CLIENT/eurekaClient/hi?name="+ name,String.class);
     }
 

@@ -19,6 +19,7 @@ public class HiController {
 
     @GetMapping(value = "/hi")
     public String sayHi(@RequestParam String name){
+        System.out.println("service-feign");
         return schedualServiceHi.sayHiFromClientOne(name);
     }
 }
