@@ -40,6 +40,20 @@
     2、服务过滤:
         1、创建过滤器, 继承ZuulFilter
 
+第六篇: 分布式配置中心(Spring Cloud Config) (Finchley版本)
+    在SpringCloudConfig项目上 git: https://github.com/ZhaLC/SpringCloudConfig.git develop分支
+
+第九篇: 服务链路追踪(Spring Cloud Sleuth) (Finchley版)
+    1、eureka-client eureka-client2
+    2、依赖:
+        spring-cloud-starter-zipkin的起步依赖
+    3、zipkin监控页面:
+        运行 java -jar zipkin-server-2.10.1-exec.jar
+        localhost:9411
+    4、配置文件:
+        指定zipkin server的地址
+        spring.zipkin.base-url=http://localhost:9411
+
 
 
 

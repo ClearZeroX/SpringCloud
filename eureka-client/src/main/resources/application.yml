@@ -5,8 +5,13 @@ server:
 spring:
   application:
     name: eureka-client
+  #配置zipkin server地址
+  zipkin:
+    base-url: http://localhost:9411
+
 eureka:
   client:
     service-url:
       defaultZone: http://localhost:8988/eurekaServer/eureka/
+
 

@@ -1,10 +1,14 @@
 server:
   port: 8986
   servlet:
-    context-path: /eurekaclient2/
+    context-path: /eurekaClient2/
 spring:
   application:
     name: eureka-client2
+  #配置zipkin server地址
+    zipkin:
+      base-url: http://localhost:9411
+
 eureka:
   client:
     service-url:
