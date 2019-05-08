@@ -54,6 +54,15 @@
         指定zipkin server的地址
         spring.zipkin.base-url=http://localhost:9411
 
+第十篇: 高可用的服务注册中心(Finchley版本)
+    1、eureka-server eureka-client
+    2、依赖: 无新增依赖
+    3、服务端新增配置:
+        application-peer1.yml
+        application-peer2.yml
+        然后客户端配置向peer1注册服务时, peer2启动时也会发现服务
+    4、TODO 貌似是两个两个服务端相互注册, 暂时没太懂先这样理解
+
 
 
 

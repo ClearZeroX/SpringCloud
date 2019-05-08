@@ -12,6 +12,9 @@ spring:
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:8988/eurekaServer/eureka/
+      defaultZone: http://peer1:8977/eurekaServer/eureka/
+  #配置这个将空页面status状态会显示IP而不是主机名  但是测试没有生效...
+  instance:
+      prefer-ip-address: true
 
 
