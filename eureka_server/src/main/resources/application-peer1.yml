@@ -1,0 +1,10 @@
+#server:
+#  port: 8977
+#spring:
+#  profiles: peer1
+#eureka:
+#  instance:
+#    hostname: peer1
+#  client:
+#    service-url:
+#      defaultZone: http://127.0.0.1:8976/eurekaServer/eureka/

@@ -17,3 +17,5 @@ eureka:
 spring:
   application:
     name: eureka-server
+  profiles:
+    active: peer2
