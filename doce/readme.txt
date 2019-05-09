@@ -92,6 +92,10 @@
     6、总结: 增加了监控页面 页面参数详解见:
         https://www.cnblogs.com/chenweida/p/9025589.html
 
+第十三篇: 断路器聚合监控(Hystrix Turbine) (Finchley 版本)
+    1、eureka-server、eureka-client、eureka-client2、service-turbine
+    2、TODO...
+
 
 
 
