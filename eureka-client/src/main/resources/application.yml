@@ -17,4 +17,15 @@ eureka:
   instance:
       prefer-ip-address: true
 
+#添加如下配置才能请求到页面 http://localhost:8987/eurekaClient/actuator/hystrix.stream
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+      cors:
+        allowed-origins: "*"
+        allowed-methods: "*"
+
+
 

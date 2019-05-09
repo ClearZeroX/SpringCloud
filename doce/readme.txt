@@ -63,6 +63,35 @@
         然后客户端配置向peer1注册服务时, peer2启动时也会发现服务
     4、TODO 貌似是两个两个服务端相互注册, 暂时没太懂先这样理解
 
+第十一篇: 貌似是docker
+    Finchley版本没有讲解  暂时先跳过
+
+第十二篇: 断路监控器(Hystrix Dashboard) (Finchley版本)
+    1、eureka-client
+    2、依赖:
+        spring-boot-starter-actuator
+        spring-cloud-starter-netflix-hystrix
+        spring-cloud-starter-netflix-hystrix-dashboard
+    3、注解
+        @EnableHystrix
+        @EnableHystrixDashboard
+        @EnableCircuitBreaker
+    4、配置文件:
+        #添加如下配置才能请求到页面 http://localhost:8987/eurekaClient/actuator/hystrix.stream
+        management:
+          endpoints:
+            web:
+              exposure:
+                include: "*"
+              cors:
+                allowed-origins: "*"
+                allowed-methods: "*"
+    5、页面展示:
+        http://localhost:8987/eurekaClient/hystrix
+        参数分别为:  http://localhost:8987/eurekaClient/actuator/hystrix.stream  xxx  xxx
+    6、总结: 增加了监控页面 页面参数详解见:
+        https://www.cnblogs.com/chenweida/p/9025589.html
+
 
 
 
