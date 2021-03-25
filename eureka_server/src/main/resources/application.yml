@@ -3,19 +3,23 @@ server:
   servlet:
     context-path: /eurekaServer/
 
-
 eureka:
   instance:
     hostname: localhost
   client:
+    # 向服务注册中心注册, 默认为true, 因为本例是单节点服务注册中心, 不需要像自己注册
     register-with-eureka: false
+    # 从服务注册中心拉取信息, 默认为true, 因为本例是单节点服务注册中心, 不需要像自己拉取
     fetch-registry: false
-    # 服务治理的url 注意要加访问地址
     service-url:
-      defaultZone: http://${eureka.instance.hostname}:${server.port}/eurekaServer/eureka
+      # ip是hostname, 端口是服务实例的端口, eurekaServer是context-path, 最好不加, 后加/eureka/
+      # 这里都写自己的是因为自己就是服务注册中心, 如果高可用互相注册, 就写其他服务注册中心的
+      # 或者是client注册就要写服务注册中心的这些信息
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eurekaServer/eureka/
 
 spring:
   application:
+    # 实例名(注册到服务注册中心后, 就用这个名)
     name: eureka-server
-  profiles:
-    active: peer1
+#  profiles:
+#    active: peer1
